@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Me!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="inputBox" value='0' disabled>
+        <br>
+        <button type="button" >C</button>
+        <button type="button" >CE</button>
+        <button type="button" >%</button>
+        <button type="button" >/</button>
+        <br>
+        <button type="button" >7</button>
+        <button type="button" >8</button>
+        <button type="button" >9</button>
+        <button type="button" >*</button>
+        <br>
+        <button type="button" >4</button>
+        <button type="button" >5</button>
+        <button type="button" >6</button>
+        <button type="button" >-</button>
+        <br>
+        <button type="button" >1</button>
+        <button type="button" >2</button>
+        <button type="button" >3</button>
+        <button type="button" >+</button>
+        <br>
+        <button type="button" id="signChange">±</button>
+        <button type="button" >0</button>
+        <button type="button" >.</button>
+        <button type="button" >=</button>
+      </div>
+
+ <script>
+   let string = '' 
+let inputBox = document.getElementById('inputBox')
+let buttons = document.querySelectorAll('button')
+//using arrow function =>
+  buttons.forEach(element =>{
+    element.addEventListener('click', (b)=>{
+        if(b.target.innerText == '='){
+            string = String(eval(string))
+            inputBox.value = string;
+        }
+        else if(b.target.innerText == 'C'){
+            string=''
+            inputBox.value = string;
+        }
+        else if(b.target.innerText == 'CE'){
+            string= string.substring(0,string.length-1)
+            inputBox.value = string;
+        }
+        else if(b.target.id == 'signChange'){
+            string = (-eval(string))
+            inputBox.value = string;
+        }
+        else {
+            string += b.target.innerText
+            inputBox.value = string
+        }
+    })
+  }) 
+</script>
+</body>
+</html>
