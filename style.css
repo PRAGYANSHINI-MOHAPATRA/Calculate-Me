@@ -55,10 +55,3 @@ body{
      color: aliceblue;
     text-decoration: none;
   }
-  a{
-   
-  }
-a::after{
-  color: aliceblue;
-  text-decoration: none;
-}
