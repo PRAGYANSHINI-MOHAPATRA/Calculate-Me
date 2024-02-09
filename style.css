@@ -52,6 +52,8 @@ body{
     width: 19rem;
     height: 48px;
     background: linear-gradient(to top left , rgb(8, 3, 59),#f8f2f246) ;
-     color: aliceblue;
-    text-decoration: none;
   }
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
